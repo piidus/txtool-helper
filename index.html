@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TXTool Apps &amp; Legal Policies</title>
+    <meta name="description" content="Official portal and privacy policies for mobile applications developed by TXTool, including Kheror Khata.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #4338ca;
+            --primary-light: #6366f1;
+            --primary-subtle: #eef2ff;
+            --accent: #f59e0b;
+            --dark: #0f172a;
+            --slate: #334155;
+            --muted: #64748b;
+            --light-bg: #f8fafc;
+            --card-bg: #ffffff;
+            --border: #e2e8f0;
+            --radius: 16px;
+            --shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.02);
+            --shadow-lg: 0 20px 40px -10px rgba(67, 56, 202, 0.12);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: var(--light-bg);
+            color: var(--dark);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 16px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--dark);
+        }
+
+        .brand-logo {
+            width: 38px;
+            height: 38px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: white;
+            font-weight: 800;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(99, 102, 241, 0.35);
+        }
+
+        .brand-text {
+            font-weight: 800;
+            font-size: 20px;
+            letter-spacing: -0.5px;
+        }
+
+        .brand-text span {
+            color: var(--primary-light);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--slate);
+            font-weight: 600;
+            font-size: 14px;
+            transition: color 0.2s;
+        }
+
+        .nav-link:hover {
+            color: var(--primary);
+        }
+
+        .hero {
+            background: linear-gradient(180deg, #ffffff 0%, #f1f5f9 100%);
+            padding: 70px 24px 60px;
+            text-align: center;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--primary-subtle);
+            color: var(--primary);
+            font-size: 13px;
+            font-weight: 700;
+            padding: 6px 16px;
+            border-radius: 999px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(99, 102, 241, 0.2);
+        }
+
+        .hero h1 {
+            font-size: 40px;
+            font-weight: 800;
+            letter-spacing: -1px;
+            color: var(--dark);
+            max-width: 800px;
+            margin: 0 auto 16px;
+            line-height: 1.25;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: var(--muted);
+            max-width: 640px;
+            margin: 0 auto 30px;
+        }
+
+        main {
+            flex: 1;
+            max-width: 1100px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 48px 24px;
+        }
+
+        .section-title {
+            font-size: 24px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title::before {
+            content: '';
+            display: inline-block;
+            width: 6px;
+            height: 24px;
+            background: var(--primary);
+            border-radius: 3px;
+        }
+
+        /* App Card */
+        .app-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 36px;
+            box-shadow: var(--shadow);
+            margin-bottom: 40px;
+            display: grid;
+            grid-template-columns: 140px 1fr;
+            gap: 32px;
+            align-items: start;
+        }
+
+        @media (max-width: 768px) {
+            .app-card {
+                grid-template-columns: 1fr;
+                gap: 20px;
+                padding: 24px;
+            }
+            .hero h1 {
+                font-size: 30px;
+            }
+        }
+
+        .app-icon-img {
+            width: 140px;
+            height: 140px;
+            border-radius: 28px;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--border);
+            object-fit: cover;
+        }
+
+        .app-details h2 {
+            font-size: 26px;
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 4px;
+        }
+
+        .app-tagline {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 12px;
+        }
+
+        .app-desc {
+            font-size: 15px;
+            color: var(--slate);
+            margin-bottom: 20px;
+        }
+
+        .feature-chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 24px;
+        }
+
+        .chip {
+            background: #f1f5f9;
+            color: var(--slate);
+            font-size: 12px;
+            font-weight: 600;
+            padding: 6px 12px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+        }
+
+        .btn-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            font-weight: 700;
+            padding: 10px 20px;
+            border-radius: 10px;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-light);
+            box-shadow: 0 4px 14px rgba(67, 56, 202, 0.35);
+        }
+
+        .btn-outline {
+            background: white;
+            color: var(--slate);
+            border: 1px solid var(--border);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+            background: var(--primary-subtle);
+        }
+
+        /* Screenshot gallery */
+        .screenshots-preview {
+            margin-top: 32px;
+            border-top: 1px solid var(--border);
+            padding-top: 28px;
+        }
+
+        .screenshots-preview h3 {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 16px;
+        }
+
+        .screenshots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 16px;
+        }
+
+        .screenshot-item {
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+            transition: transform 0.2s;
+        }
+
+        .screenshot-item:hover {
+            transform: translateY(-4px);
+        }
+
+        .screenshot-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Trust & Security */
+        .trust-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-bottom: 48px;
+        }
+
+        .trust-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 24px;
+        }
+
+        .trust-icon {
+            font-size: 28px;
+            margin-bottom: 12px;
+        }
+
+        .trust-card h3 {
+            font-size: 17px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--dark);
+        }
+
+        .trust-card p {
+            font-size: 14px;
+            color: var(--muted);
+            line-height: 1.5;
+        }
+
+        /* Footer */
+        footer {
+            background: #ffffff;
+            border-top: 1px solid var(--border);
+            padding: 40px 24px;
+            margin-top: auto;
+        }
+
+        .footer-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .footer-left {
+            font-size: 14px;
+            color: var(--muted);
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .footer-links a {
+            text-decoration: none;
+            color: var(--slate);
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <a href="index.html" class="brand">
+                <div class="brand-logo">TX</div>
+                <div class="brand-text">TX<span>Tool</span></div>
+            </a>
+            <div class="nav-links">
+                <a href="#apps" class="nav-link">Apps</a>
+                <a href="privacy-policy.html" class="nav-link">Privacy Policy</a>
+                <a href="terms.html" class="nav-link">Terms</a>
+                <a href="mailto:support@txtool.in" class="btn btn-outline" style="padding: 6px 14px; font-size: 13px;">Contact Support</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="hero">
+        <div class="hero-badge">⚡ Privacy-First Productivity</div>
+        <h1>Simple, Fast &amp; Offline-First Utilities for Everyone</h1>
+        <p>At TXTool, we craft lightweight, beautiful, and secure software tools that respect your digital sovereignty. No unnecessary cloud sync, no tracking, zero ads.</p>
+    </div>
+
+    <main>
+        <div class="section-title" id="apps">Featured Applications</div>
+
+        <!-- Kheror Khata Card -->
+        <div class="app-card">
+            <img src="assets/img/app_icon_512.png" alt="Kheror Khata App Icon" class="app-icon-img">
+            <div class="app-details">
+                <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px;">
+                    <h2>Kheror Khata (খেরোর খাতা)</h2>
+                    <span style="background: #dcfce7; color: #166534; font-size: 12px; font-weight: 700; padding: 4px 10px; border-radius: 20px;">Google Play Ready</span>
+                </div>
+                <div class="app-tagline">Smart Offline Digital Ledger &amp; Calculation Notebook</div>
+                <p class="app-desc">
+                    Designed for Bengali shopkeepers, merchants, freelancers, and household budgeting. Manage daily debits and credits, sort transactions seamlessly, perform instant balance calculations, and keep full ownership of your records.
+                </p>
+
+                <div class="feature-chips">
+                    <span class="chip">🔒 100% Offline SQLite</span>
+                    <span class="chip">⚡ Instant Balance Summary</span>
+                    <span class="chip">🔤 Sort by S.L, Date &amp; Type</span>
+                    <span class="chip">📐 Expression Calculator</span>
+                    <span class="chip">🚫 Zero Tracking SDKs</span>
+                </div>
+
+                <div class="btn-group">
+                    <a href="privacy-policy.html" class="btn btn-primary">
+                        🛡️ Privacy Policy
+                    </a>
+                    <a href="terms.html" class="btn btn-outline">
+                        📄 Terms of Service
+                    </a>
+                    <a href="https://txtool.in" target="_blank" class="btn btn-outline">
+                        🌐 TXTool Official Website
+                    </a>
+                </div>
+
+                <div class="screenshots-preview">
+                    <h3>App Screenshots Preview</h3>
+                    <div class="screenshots-grid">
+                        <div class="screenshot-item">
+                            <img src="assets/img/screenshot_1_home.jpg" alt="Home Dashboard with Khatas">
+                        </div>
+                        <div class="screenshot-item">
+                            <img src="assets/img/screenshot_2_cards.jpg" alt="Card View Ledger">
+                        </div>
+                        <div class="screenshot-item">
+                            <img src="assets/img/screenshot_3_table.jpg" alt="Table View with Sorting">
+                        </div>
+                        <div class="screenshot-item">
+                            <img src="assets/img/screenshot_4_calc.jpg" alt="Quick Calculator Interface">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-title">Our Core Commitments</div>
+        <div class="trust-grid">
+            <div class="trust-card">
+                <div class="trust-icon">🛡️</div>
+                <h3>Absolute Privacy</h3>
+                <p>All database records remain stored locally on your mobile device. We do not host your accounts or transactions on remote servers.</p>
+            </div>
+            <div class="trust-card">
+                <div class="trust-icon">🔋</div>
+                <h3>Offline Accessibility</h3>
+                <p>Use your tools anytime, anywhere without cellular data or Wi-Fi. Perfect for remote areas, shop counters, and on-the-go billing.</p>
+            </div>
+            <div class="trust-card">
+                <div class="trust-icon">🚀</div>
+                <h3>Transparent Compliance</h3>
+                <p>Fully compliant with Google Play Store developer guidelines, COPPA standards, and modern user data protection best practices.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-left">
+                &copy; 2026 <strong>TXTool</strong> (txtool.in). All rights reserved.<br>
+                Contact: <a href="mailto:support@txtool.in" style="color: var(--primary); text-decoration: none;">support@txtool.in</a>
+            </div>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+                <a href="https://txtool.in" target="_blank">txtool.in</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
