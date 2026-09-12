@@ -8,13 +8,13 @@ Official public repository hosting static web documentation, legal policies, and
 
 Once pushed to your public GitHub repository (`https://github.com/piidus/txtool-helper`), your site will be live at:
 
-- **Portal Home:** `https://piidus.github.io/txtool-helper/`
-- **Privacy Policy (Play Store URL):** `https://piidus.github.io/txtool-helper/privacy-policy.html`
-- **Clean Subfolder Privacy Policy:** `https://piidus.github.io/txtool-helper/kheror-khata/privacy-policy.html`
-- **Terms of Service:** `https://piidus.github.io/txtool-helper/terms.html`
+- **Portal Home:** `https://helper.txtool.in/`
+- **Privacy Policy (Play Store URL):** `https://helper.txtool.in/privacy-policy.html`
+- **Clean Subfolder Privacy Policy:** `https://helper.txtool.in/kheror-khata/privacy-policy.html`
+- **Terms of Service:** `https://helper.txtool.in/terms.html`
 
 > **Note for Google Play Console:**
-> Enter `https://piidus.github.io/txtool-helper/privacy-policy.html` in the **App Content -> Privacy Policy** section of your Google Play Developer Console.
+> Enter `https://helper.txtool.in/privacy-policy.html` in the **App Content -> Privacy Policy** section of your Google Play Developer Console.
 
 ---
 
@@ -71,7 +71,7 @@ git push -u origin main
 2. Go to **Settings** &gt; **Pages** (on the left menu)
 3. Under **Branch**, select `main` and `/ (root)`, then click **Save**
 4. Within 1-2 minutes, your website will be live at:
-   `https://piidus.github.io/txtool-helper/`
+   `https://helper.txtool.in/`
 
 ---
 
