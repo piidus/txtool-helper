@@ -1,6 +1,6 @@
 # TXTool Helper & Documentation Hub
 
-Official public repository hosting static web documentation, legal policies, and user guides for applications developed by **TXTool** ([txtool.in](https://txtool.in)), including **Kheror Khata** (`in.txtool.kheror_khata`).
+Official public repository hosting static web documentation, legal policies, and user guides for applications developed by **TXTool** ([txtool.in](https://txtool.in)), including **Kheror Khata** (`in.txtool.kherorkhata`).
 
 ---
 
