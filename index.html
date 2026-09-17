@@ -1,33 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TXTool — Cheap Cloud VPS India (from ₹149/mo), Developer Hosting &amp; Apps</title>
-    <meta name="description" content="TXTool provides high-performance, ultra-affordable Cloud VPS and container hosting in India starting at ₹149/month with NVMe storage. Creator of privacy-first tools including Kheror Khata.">
+    <title>TXTool — Apps, High-Speed Cloud VPS (from ₹149/mo) &amp; Developer Tools</title>
+    <meta name="description" content="TXTool crafts high-performance developer cloud hosting starting at ₹149/month with NVMe storage on txtmail.xyz, and privacy-first offline mobile apps including Kheror Khata.">
     
     <!-- Primary SEO Meta Keywords -->
-    <meta name="keywords" content="cheap vps india, low cost vps india, developer cloud vps, container hosting india, docker vps hosting, python flask hosting, nodejs cloud server, cheap cloud server india, nvme ssd vps, budget linux vps, 149 vps india, txtool, txtool cloud, kheror khata, offline digital ledger, bengali ledger app, privacy first tools, txtmail.xyz hosting">
+    <meta name="keywords" content="txtool, txtool apps, kheror khata, khata app, offline digital ledger, bengali ledger app, cheap vps india, low cost vps india, developer cloud vps, container hosting india, docker vps hosting, python flask hosting, nodejs cloud server, cheap cloud server india, nvme ssd vps, budget linux vps, 149 vps india, txtmail.xyz hosting, privacy first tools">
     <meta name="author" content="TXTool">
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <link rel="canonical" href="https://txtool.in/">
 
-    <!-- Open Graph / Facebook / WhatsApp Preview -->
+    <!-- Open Graph / WhatsApp / Social Preview -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://txtool.in/">
     <meta property="og:site_name" content="TXTool">
-    <meta property="og:title" content="TXTool — Affordable Cloud VPS Hosting &amp; Developer Tools in India">
-    <meta property="og:description" content="High-performance AMD EPYC &amp; Intel Xeon VPS starting at ₹149/mo. Instant deployment with NVMe SSD, automated subdomains on txtmail.xyz, and free SSL.">
+    <meta property="og:title" content="TXTool — Cloud VPS Hosting &amp; Privacy-First Mobile Apps">
+    <meta property="og:description" content="High-performance developer cloud hosting starting at ₹149/mo, and smart offline apps like Kheror Khata.">
     <meta property="og:image" content="https://txtool.in/assets/img/app_icon_512.png">
     <meta property="og:locale" content="en_IN">
 
-    <!-- Twitter Card Data -->
+    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="TXTool — Cloud VPS Hosting &amp; Developer Apps">
-    <meta name="twitter:description" content="Ultra-fast developer cloud hosting starting at ₹149/mo with NVMe storage. Pre-book your slot today on Discord.">
+    <meta name="twitter:title" content="TXTool — Cloud VPS &amp; Mobile Apps">
+    <meta name="twitter:description" content="Affordable cloud container hosting and offline productivity tools. Pre-book your slot today.">
     <meta name="twitter:image" content="https://txtool.in/assets/img/app_icon_512.png">
 
-    <!-- Schema.org JSON-LD Structured Data for Google Rich Snippets -->
+    <!-- Schema.org JSON-LD Structured Data -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -37,7 +37,7 @@
           "@id": "https://txtool.in/#website",
           "url": "https://txtool.in/",
           "name": "TXTool",
-          "description": "High-Speed Developer Cloud VPS, Container Hosting & Privacy-First Utilities",
+          "description": "Developer Cloud VPS, Container Hosting & Privacy-First Mobile Utilities",
           "publisher": {
             "@id": "https://txtool.in/#organization"
           }
@@ -55,7 +55,7 @@
         {
           "@type": "Product",
           "name": "TXTool Cloud 2.1 — Developer Cloud VPS & Container Hosting",
-          "description": "High-performance AMD EPYC & Intel Xeon Linux VPS with NVMe SSD storage and automated subdomains on txtmail.xyz.",
+          "description": "High-performance Linux VPS with NVMe SSD storage and automated subdomains on txtmail.xyz.",
           "brand": {
             "@type": "Brand",
             "name": "TXTool Cloud"
@@ -111,9 +111,14 @@
     }
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
         :root {
             --primary: #4338ca;
             --primary-light: #6366f1;
@@ -502,6 +507,91 @@
             color: var(--primary);
         }
     
+
+        .section-title {
+            scroll-margin-top: 90px;
+        }
+
+        #apps, #cloud {
+            scroll-margin-top: 90px;
+        }
+
+        /* Mobile Hamburger Button */
+        .mobile-toggle {
+            display: none;
+            background: transparent;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 8px;
+            cursor: pointer;
+            color: var(--dark);
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            transition: background 0.2s;
+        }
+
+        .mobile-toggle:hover {
+            background: var(--light-bg);
+        }
+
+        .mobile-toggle svg {
+            width: 22px;
+            height: 22px;
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 2;
+        }
+
+        @media (max-width: 768px) {
+            .mobile-toggle {
+                display: flex;
+            }
+
+            .nav-links {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: #ffffff;
+                flex-direction: column;
+                align-items: stretch;
+                padding: 20px 24px;
+                gap: 14px;
+                border-bottom: 2px solid var(--primary-light);
+                box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+                display: none;
+            }
+
+            .nav-links.active {
+                display: flex;
+                animation: slideDown 0.25s ease-out forwards;
+            }
+
+            @keyframes slideDown {
+                from {
+                    opacity: 0;
+                    transform: translateY(-8px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            .nav-link {
+                padding: 10px 14px;
+                border-radius: 8px;
+                font-size: 15px;
+                display: block;
+            }
+
+            .nav-link:hover {
+                background: var(--primary-subtle);
+            }
+        }
+
         /* TXTool Cloud VPS Styles */
         .cloud-section {
             background: linear-gradient(135deg, #090d16 0%, #171c38 50%, #111827 100%);
@@ -540,7 +630,7 @@
         }
 
         .cloud-header h2 {
-            font-size: 32px;
+            font-size: 30px;
             font-weight: 800;
             letter-spacing: -0.5px;
             margin-bottom: 12px;
@@ -595,7 +685,7 @@
         }
 
         .timeline-info p {
-            font-size: 15px;
+            font-size: 14px;
             font-weight: 700;
             color: #ffffff;
         }
@@ -739,8 +829,8 @@
             background: #5865F2;
             color: #ffffff;
             font-weight: 800;
-            font-size: 15px;
-            padding: 12px 24px;
+            font-size: 14px;
+            padding: 12px 20px;
             border-radius: 10px;
             text-decoration: none;
             display: inline-flex;
@@ -752,8 +842,6 @@
 
         .btn-discord-cta:hover {
             background: #4752C4;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(88, 101, 242, 0.55);
             color: #ffffff;
         }
 
@@ -772,19 +860,19 @@
         }
 
         .btn-card-prebook:hover {
-            background: #5865F2;
-            border-color: #5865F2;
+            background: #10b981;
+            border-color: #10b981;
             color: #ffffff;
         }
 
         .featured .btn-card-prebook {
-            background: #6366f1;
-            border-color: #6366f1;
+            background: #10b981;
+            border-color: #10b981;
         }
 
         .featured .btn-card-prebook:hover {
-            background: #4f46e5;
-            border-color: #4f46e5;
+            background: #059669;
+            border-color: #059669;
         }
 
     </style>
@@ -797,13 +885,19 @@
                 <div class="brand-logo">TX</div>
                 <div class="brand-text">TX<span>Tool</span></div>
             </a>
-                        <div class="nav-links">
-                <a href="#cloud" class="nav-link" style="color: var(--primary); font-weight: 700;">⚡ Cloud VPS (Upcoming)</a>
-                <a href="#apps" class="nav-link">Mobile Apps</a>
+            <button class="mobile-toggle" id="mobileMenuBtn" aria-label="Toggle Navigation Menu">
+                <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
+            <div class="nav-links" id="navLinks">
+                <a href="#cloud" class="nav-link" style="color: var(--primary); font-weight: 700;">⚡ Cloud VPS</a>
+                <a href="#apps" class="nav-link">📱 Mobile Apps</a>
                 <a href="privacy-policy.html" class="nav-link">Privacy Policy</a>
                 <a href="terms.html" class="nav-link">Terms</a>
                 <a href="https://discord.gg/kBZGb3B9y" target="_blank" class="btn btn-outline" style="padding: 6px 14px; font-size: 13px; border-color: #5865F2; color: #5865F2;">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="vertical-align: middle;"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994.021-.041.001-.09-.041-.106a13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.929 1.793 8.18 1.793 12.061 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.894.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.028zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>
                     Discord Community
                 </a>
             </div>
@@ -817,17 +911,19 @@
     </div>
 
     <main>
-        <!-- TXTool Cloud VPS Pre-Booking Section -->
-        <div class="cloud-section" id="cloud">
+                <!-- SECTION 1: CLOUD VPS PRODUCT -->
+        <div class="section-title" id="cloud">TXTool Cloud (Developer VPS &amp; Container Hosting)</div>
+
+        <div class="cloud-section">
             <div class="cloud-glow"></div>
             
-            <div class="cloud-badge">🚀 TXTool Cloud 2.1 — Early-Bird Pre-Booking</div>
+            <div class="cloud-badge">🚀 TXTool Cloud 2.1 — Early-Bird Pre-Booking Live</div>
             <div class="cloud-header">
                 <h2>High-Performance Developer VPS &amp; Container Cloud</h2>
-                <p>Enterprise AMD EPYC &amp; Intel Xeon hardware with ultra-fast NVMe storage. Designed for Python Flask/Django, NodeJS, Go, Docker containers, and production databases.</p>
+                <p>Enterprise AMD EPYC &amp; Intel Xeon hardware with ultra-fast NVMe storage. Tailored for Python (Flask/Django), Node.js, Go, Docker containers, and production databases on <strong>*.txtmail.xyz</strong>.</p>
             </div>
 
-            <!-- Pre-Booking Timeline & Rules -->
+            <!-- Pre-Booking Timeline -->
             <div class="timeline-bar">
                 <div class="timeline-step">
                     <div class="timeline-num">1</div>
@@ -923,7 +1019,7 @@
                 </div>
             </div>
 
-                        <!-- Pre-booking CTA Banner -->
+            <!-- Pre-booking CTA Banner -->
             <div class="cloud-footer-banner">
                 <div class="cloud-footer-text">
                     <h3>Reserve Your Seat &amp; Subdomain on txtmail.xyz for Free</h3>
@@ -933,13 +1029,66 @@
                     <a href="https://forms.gle/AbrS1F7x4oZdqx4a9" target="_blank" class="btn btn-primary" style="background: #10b981; font-size: 15px; padding: 12px 22px; box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4);">
                         📝 Fill Google Form to Reserve (₹0)
                     </a>
-                    <a href="https://discord.gg/kBZGb3B9y" target="_blank" class="btn-discord-cta" style="padding: 12px 20px;">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994.021-.041.001-.09-.041-.106a13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.929 1.793 8.18 1.793 12.061 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.894.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.028zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>
-                        Join Discord
+                    <a href="https://discord.gg/kBZGb3B9y" target="_blank" class="btn-discord-cta">
+                        Join Discord Community
                     </a>
                 </div>
             </div>
         </div>
+
+        <!-- SECTION 2: MOBILE APPLICATIONS PRODUCT -->
+        <div class="section-title" id="apps">Mobile Applications &amp; Utilities</div>
+
+        <!-- Kheror Khata Card -->
+        <div class="app-card">
+            <img src="assets/img/app_icon_512.png" alt="Kheror Khata App Icon" class="app-icon-img">
+            <div class="app-details">
+                <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px;">
+                    <h2>Kheror Khata (খেরোর খাতা)</h2>
+                    <span style="background: #dcfce7; color: #166534; font-size: 12px; font-weight: 700; padding: 4px 10px; border-radius: 20px;">Google Play Ready</span>
+                </div>
+                <div class="app-tagline">Smart Offline Digital Ledger &amp; Calculation Notebook</div>
+                <p class="app-desc">
+                    Designed for Bengali shopkeepers, merchants, freelancers, and household budgeting. Manage daily debits and credits, sort transactions seamlessly, perform instant balance calculations, and keep full ownership of your records.
+                </p>
+
+                <div class="feature-chips">
+                    <span class="chip">🔒 100% Offline SQLite</span>
+                    <span class="chip">⚡ Instant Balance Summary</span>
+                    <span class="chip">🔤 Sort by S.L, Date &amp; Type</span>
+                    <span class="chip">📐 Expression Calculator</span>
+                    <span class="chip">🚫 Zero Tracking SDKs</span>
+                </div>
+
+                <div class="btn-group">
+                    <a href="privacy-policy.html" class="btn btn-primary">
+                        🛡️ Privacy Policy
+                    </a>
+                    <a href="terms.html" class="btn btn-outline">
+                        📄 Terms of Service
+                    </a>
+                    <a href="https://txtool.in" target="_blank" class="btn btn-outline">
+                        🌐 TXTool Official Website
+                    </a>
+                </div>
+
+                <div class="screenshots-preview">
+                    <h3>App Screenshots Preview</h3>
+                    <div class="screenshots-grid">
+                        <div class="screenshot-item">
+                            <img src="assets/img/screenshot_1_home.jpg" alt="Home Dashboard with Khatas">
+                        </div>
+                        <div class="screenshot-item">
+                            <img src="assets/img/screenshot_2_cards.jpg" alt="Card View Ledger">
+                        </div>
+                        <div class="screenshot-item">
+                            <img src="assets/img/screenshot_3_table.jpg" alt="Table View with Sorting">
+                        </div>
+                        <div class="screenshot-item">
+                            <img src="assets/img/screenshot_4_calc.jpg" alt="Quick Calculator Interface">
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -978,5 +1127,28 @@
         </div>
     </footer>
 
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var toggleBtn = document.getElementById('mobileMenuBtn');
+            var navLinks = document.getElementById('navLinks');
+
+            if (toggleBtn && navLinks) {
+                toggleBtn.addEventListener('click', function() {
+                    navLinks.classList.toggle('active');
+                });
+
+                // Auto-close menu when clicking any nav link on mobile
+                var links = navLinks.querySelectorAll('a');
+                links.forEach(function(link) {
+                    link.addEventListener('click', function() {
+                        if (window.innerWidth <= 768) {
+                            navLinks.classList.remove('active');
+                        }
+                    });
+                });
+            }
+        });
+    </script>
 </body>
 </html>
