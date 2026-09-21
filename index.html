@@ -914,9 +914,10 @@
                 <!-- SECTION 1: CLOUD VPS PRODUCT -->
         <div class="section-title" id="cloud">TXTool Cloud (Developer VPS &amp; Container Hosting)</div>
 
-        <div class="cloud-section">
+        <div class="cloud-section" id="cloud">
             <div class="cloud-glow"></div>
             
+            <!-- Opening Ceremony Banner & Scarcity -->
             <div style="display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-bottom: 16px;">
                 <div class="cloud-badge" style="background: linear-gradient(135deg, #f59e0b, #ef4444); color: #ffffff; border: none; box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);">
                     🎊 Grand Opening Ceremony: 20% OFF with 1-Year Price Lock!
@@ -930,8 +931,8 @@
             </div>
 
             <div class="cloud-header">
-                <h2>High-Performance WordPress, Container &amp; VPS Cloud</h2>
-                <p>Enterprise AMD EPYC &amp; Intel Xeon hardware with ultra-fast NVMe storage. Lock in your launch pricing for <strong>1 full year with ZERO renewal hikes</strong>. Pre-book your slot today on <strong>*.txtmail.xyz</strong>.</p>
+                <h2>High-Performance Developer Cloud Platform</h2>
+                <p>Enterprise AMD EPYC &amp; Intel Xeon bare-metal infrastructure. Choose your deployment stage: <strong>Shared Web</strong>, <strong>App Containers</strong>, or <strong>Dedicated KVM VPS</strong>. All plans feature 1-Year Price Lock with zero renewal hikes.</p>
             </div>
 
             <!-- Pre-Booking Timeline -->
@@ -959,126 +960,494 @@
                 </div>
             </div>
 
-            <!-- 4 Pricing Tiers Grid -->
-            <div class="cloud-grid" style="grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));">
-                
-                <!-- Plan 0: WordPress Starter (Opening Ceremony Special) -->
-                <div class="cloud-card" style="border-color: rgba(245, 158, 11, 0.5); background: linear-gradient(180deg, rgba(245, 158, 11, 0.12) 0%, rgba(255, 255, 255, 0.04) 100%);">
-                    <div class="cloud-pill" style="background: linear-gradient(135deg, #f59e0b, #d97706); color: #ffffff;">Opening Deal • 20% OFF</div>
-                    <div class="plan-title" style="display: flex; align-items: center; gap: 8px;">
-                        <span>WordPress Starter</span>
+            <!-- STAGE TAB SWITCHER (OPTION A: RECOMMENDED) -->
+            <style>
+                .stage-tab-nav {
+                    display: flex;
+                    justify-content: center;
+                    gap: 12px;
+                    margin: 0 auto 24px;
+                    flex-wrap: wrap;
+                }
+                .stage-tab-btn {
+                    background: rgba(255, 255, 255, 0.05);
+                    border: 1px solid rgba(255, 255, 255, 0.15);
+                    color: #94a3b8;
+                    padding: 12px 24px;
+                    border-radius: 12px;
+                    font-size: 14px;
+                    font-weight: 800;
+                    cursor: pointer;
+                    transition: all 0.25s ease;
+                    display: inline-flex;
+                    align-items: center;
+                    gap: 8px;
+                }
+                .stage-tab-btn:hover {
+                    color: #ffffff;
+                    border-color: rgba(99, 102, 241, 0.5);
+                    background: rgba(255, 255, 255, 0.08);
+                }
+                .stage-tab-btn.active {
+                    background: linear-gradient(135deg, #6366f1, #4f46e5);
+                    color: #ffffff;
+                    border-color: #6366f1;
+                    box-shadow: 0 4px 20px rgba(99, 102, 241, 0.4);
+                }
+                .stage-content-panel {
+                    display: none;
+                    animation: fadeIn 0.3s ease-in-out;
+                }
+                .stage-content-panel.active {
+                    display: block;
+                }
+                @keyframes fadeIn {
+                    from { opacity: 0; transform: translateY(6px); }
+                    to { opacity: 1; transform: translateY(0); }
+                }
+                .common-features-box {
+                    background: rgba(255, 255, 255, 0.03);
+                    border: 1px solid rgba(99, 102, 241, 0.3);
+                    border-radius: 16px;
+                    padding: 20px 24px;
+                    margin-bottom: 28px;
+                    backdrop-filter: blur(8px);
+                }
+                .common-box-header {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    flex-wrap: wrap;
+                    gap: 10px;
+                    margin-bottom: 14px;
+                    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+                    padding-bottom: 10px;
+                }
+                .common-box-title {
+                    font-size: 14px;
+                    font-weight: 800;
+                    color: #ffffff;
+                    text-transform: uppercase;
+                    letter-spacing: 0.8px;
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+                }
+                .common-grid {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+                    gap: 10px 16px;
+                }
+                .common-item {
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+                    font-size: 13px;
+                    color: #cbd5e1;
+                }
+                .common-item .check {
+                    color: #34d399;
+                    font-weight: 800;
+                }
+                .tag-seo {
+                    background: rgba(16, 185, 129, 0.2);
+                    border: 1px solid #10b981;
+                    color: #34d399;
+                    font-size: 11px;
+                    font-weight: 800;
+                    padding: 2px 8px;
+                    border-radius: 6px;
+                }
+                .tag-ai {
+                    background: rgba(168, 85, 247, 0.2);
+                    border: 1px solid #a855f7;
+                    color: #c084fc;
+                    font-size: 11px;
+                    font-weight: 800;
+                    padding: 2px 8px;
+                    border-radius: 6px;
+                }
+            </style>
+
+            <div class="stage-tab-nav">
+                <button type="button" class="stage-tab-btn active" onclick="switchStageTab('stage-shared', this)">
+                    🌐 Stage 1: Shared Web &amp; WordPress (3 Plans)
+                </button>
+                <button type="button" class="stage-tab-btn" onclick="switchStageTab('stage-container', this)">
+                    ⚡ Stage 2: App Containers (3 Plans)
+                </button>
+                <button type="button" class="stage-tab-btn" onclick="switchStageTab('stage-vps', this)">
+                    🖥️ Stage 3: Dedicated KVM VPS (3 Plans)
+                </button>
+            </div>
+
+            <!-- ========================================================================= -->
+            <!-- STAGE 1: SHARED WEB & WORDPRESS (3 PLANS) -->
+            <!-- ========================================================================= -->
+            <div id="stage-shared" class="stage-content-panel active">
+                <!-- Common Features Box for Stage 1 -->
+                <div class="common-features-box">
+                    <div class="common-box-header">
+                        <div class="common-box-title">
+                            💎 Included in ALL Shared Web &amp; WordPress Plans (Stage 1 Common Engine)
+                        </div>
+                        <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                            <span class="tag-seo">🚀 Built-in SEO Toolkit</span>
+                            <span class="tag-ai">🤖 AI Scraping Helper</span>
+                        </div>
                     </div>
-                    <div class="plan-desc">For personal blogs, portfolios &amp; students</div>
-                    <div class="plan-price-box">
-                        <div style="display: flex; align-items: baseline; gap: 8px;">
-                            <span style="font-size: 18px; color: #94a3b8; text-decoration: line-through;">₹124</span>
-                            <span class="price-main" style="color: #fbbf24;">₹99</span>
-                            <span class="price-period">/ month</span>
-                        </div>
-                        <div style="font-size: 11px; color: #34d399; font-weight: 700; margin-top: 4px;">
-                            🔒 1-Year Locked Rate (₹1,188/yr) • No Renewal Hikes
-                        </div>
-                        <div class="token-tag" style="background: rgba(245, 158, 11, 0.2); border-color: rgba(245, 158, 11, 0.5); color: #fbbf24;">
-                            🔥 1/4th Token: <strong>₹297</strong> (Reserve for ₹0 Today)
-                        </div>
+                    <div class="common-grid">
+                        <div class="common-item"><span class="check">✓</span> 100% NVMe PCIe SSD Storage (3,500 MB/s)</div>
+                        <div class="common-item"><span class="check">✓</span> OpenLiteSpeed Engine with LSCache (0.01s TTFB)</div>
+                        <div class="common-item"><span class="check">✓</span> Free Auto-Renewing Wildcard SSL Certificates</div>
+                        <div class="common-item"><span class="check">✓</span> <strong>Automated SEO Sitemap Ping &amp; Meta Generator</strong></div>
+                        <div class="common-item"><span class="check">✓</span> <strong>AI Web Scraping &amp; Data Extraction Worker</strong></div>
+                        <div class="common-item"><span class="check">✓</span> Daily Automated Backups with 1-Click Restore</div>
+                        <div class="common-item"><span class="check">✓</span> Free 1-Click Site Migration from Hostinger/GoDaddy</div>
+                        <div class="common-item"><span class="check">✓</span> Cloudflare Anti-DDoS Protection &amp; HTTP/3 Ingress</div>
                     </div>
-                    <ul class="plan-specs">
-                        <li><span class="bullet">✓</span> <strong>1 Domain</strong> Supported</li>
-                        <li><span class="bullet">✓</span> <strong>1 Sub Domain</strong> (*.txtmail.xyz)</li>
-                        <li><span class="bullet">✓</span> <strong>20 GB NVMe SSD</strong> Disk Space</li>
-                        <li><span class="bullet">✓</span> <strong>150 GB</strong> Monthly Bandwidth</li>
-                        <li><span class="bullet">✓</span> <strong>2 Email Addresses</strong> Included</li>
-                        <li><span class="bullet">✓</span> <strong>2 MySQL Databases</strong> (MariaDB)</li>
-                        <li><span class="bullet">✓</span> <strong>Daily Backups Free</strong></li>
-                        <li><span class="bullet">✓</span> <strong>Free SSL Certificates</strong> (Auto-Renew)</li>
-                        <li><span class="bullet">✓</span> <strong>Free 1-Click Site Migration</strong></li>
-                    </ul>
-                    <a href="https://forms.gle/AbrS1F7x4oZdqx4a9" target="_blank" class="btn-card-prebook" style="background: #f59e0b; border-color: #f59e0b; color: #ffffff; font-weight: 800;">
-                        📝 Claim ₹99 Opening Slot (₹0 Today) ➔
-                    </a>
                 </div>
 
-                <!-- Plan 1: App Container Micro -->
-                <div class="cloud-card">
-                    <div class="cloud-pill" style="background: #3b82f6;">20% OFF Launch</div>
-                    <div class="plan-title">App Container Micro</div>
-                    <div class="plan-desc">For Python Flask, Node.js APIs &amp; bots</div>
-                    <div class="plan-price-box">
-                        <div style="display: flex; align-items: baseline; gap: 8px;">
-                            <span style="font-size: 18px; color: #94a3b8; text-decoration: line-through;">₹189</span>
-                            <span class="price-main">₹149</span>
-                            <span class="price-period">/ month</span>
+                <!-- 3 Shared Cards Grid -->
+                <div class="cloud-grid" style="grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));">
+                    <!-- Plan 1: Shared Starter -->
+                    <div class="cloud-card" style="border-color: rgba(245, 158, 11, 0.5); background: linear-gradient(180deg, rgba(245, 158, 11, 0.12) 0%, rgba(255, 255, 255, 0.04) 100%);">
+                        <div class="cloud-pill" style="background: linear-gradient(135deg, #f59e0b, #d97706);">Opening Deal • 20% OFF</div>
+                        <div class="plan-title">Shared WP Starter</div>
+                        <div class="plan-desc">Personal blogs, portfolios &amp; students</div>
+                        <div class="plan-price-box">
+                            <div style="display: flex; align-items: baseline; gap: 8px;">
+                                <span style="font-size: 18px; color: #94a3b8; text-decoration: line-through;">₹124</span>
+                                <span class="price-main" style="color: #fbbf24;">₹99</span>
+                                <span class="price-period">/ month</span>
+                            </div>
+                            <div style="font-size: 11px; color: #34d399; font-weight: 700; margin-top: 4px;">
+                                🔒 1-Year Locked (₹1,188/yr) • Zero Renewal Hikes
+                            </div>
+                            <div class="token-tag" style="background: rgba(245, 158, 11, 0.2); border-color: rgba(245, 158, 11, 0.5); color: #fbbf24;">
+                                🔥 1/4th Token: <strong>₹297</strong> (Reserve for ₹0 Today)
+                            </div>
                         </div>
-                        <div style="font-size: 11px; color: #34d399; font-weight: 700; margin-top: 4px;">
-                            🔒 1-Year Locked Rate (₹1,788/yr)
-                        </div>
-                        <div class="token-tag">🔥 1/4th Token: <strong>₹372</strong></div>
+                        <ul class="plan-specs">
+                            <li><span class="bullet">✓</span> <strong>1 Domain</strong> Supported</li>
+                            <li><span class="bullet">✓</span> <strong>1 Free Subdomain</strong> (*.txtmail.xyz)</li>
+                            <li><span class="bullet">✓</span> <strong>20 GB NVMe SSD</strong> Fast Storage</li>
+                            <li><span class="bullet">✓</span> <strong>150 GB</strong> Monthly Bandwidth</li>
+                            <li><span class="bullet">✓</span> <strong>2 Email Addresses</strong> Included</li>
+                            <li><span class="bullet">✓</span> <strong>2 MySQL Databases</strong> (MariaDB)</li>
+                            <li><span class="bullet">✓</span> Basic AI Scraping Helper &amp; SEO Engine</li>
+                        </ul>
+                        <a href="https://forms.gle/AbrS1F7x4oZdqx4a9" target="_blank" class="btn-card-prebook" style="background: #f59e0b; border-color: #f59e0b; color: #ffffff; font-weight: 800;">
+                            📝 Claim ₹99 Opening Slot (₹0 Today) ➔
+                        </a>
                     </div>
-                    <ul class="plan-specs">
-                        <li><span class="bullet">✓</span> <strong>0.50 vCPU</strong> Dedicated Compute Core</li>
-                        <li><span class="bullet">✓</span> <strong>1 GB</strong> High-Speed RAM</li>
-                        <li><span class="bullet">✓</span> <strong>10 GB NVMe</strong> High IOPS SSD</li>
-                        <li><span class="bullet">✓</span> Rootless Podman Kube (`/app:Z,U`)</li>
-                        <li><span class="bullet">✓</span> Shared Subdomain Ingress (*.txtmail.xyz)</li>
-                        <li><span class="bullet">✓</span> 1-Click Git Pull Deployments (Zero Downtime)</li>
-                    </ul>
-                    <a href="https://forms.gle/AbrS1F7x4oZdqx4a9" target="_blank" class="btn-card-prebook">📝 Reserve Free Seat (₹0) ➔</a>
-                </div>
 
-                <!-- Plan 2: Standard Cloud VPS (Featured) -->
-                <div class="cloud-card featured">
-                    <div class="cloud-pill">Most Popular • 20% OFF</div>
-                    <div class="plan-title">Standard Cloud VPS</div>
-                    <div class="plan-desc">Ideal for production apps &amp; full databases</div>
-                    <div class="plan-price-box">
-                        <div style="display: flex; align-items: baseline; gap: 8px;">
-                            <span style="font-size: 18px; color: #94a3b8; text-decoration: line-through;">₹349</span>
-                            <span class="price-main">₹279</span>
-                            <span class="price-period">/ month</span>
+                    <!-- Plan 2: Shared Growth (Featured) -->
+                    <div class="cloud-card featured">
+                        <div class="cloud-pill">Popular Growth • 20% OFF</div>
+                        <div class="plan-title">Shared WP Growth</div>
+                        <div class="plan-desc">For growing blogs, affiliate sites &amp; freelancers</div>
+                        <div class="plan-price-box">
+                            <div style="display: flex; align-items: baseline; gap: 8px;">
+                                <span style="font-size: 18px; color: #94a3b8; text-decoration: line-through;">₹162</span>
+                                <span class="price-main">₹130</span>
+                                <span class="price-period">/ month</span>
+                            </div>
+                            <div style="font-size: 11px; color: #34d399; font-weight: 700; margin-top: 4px;">
+                                🔒 1-Year Locked (₹1,560/yr) • Zero Renewal Hikes
+                            </div>
+                            <div class="token-tag">🔥 1/4th Token: <strong>₹390</strong></div>
                         </div>
-                        <div style="font-size: 11px; color: #34d399; font-weight: 700; margin-top: 4px;">
-                            🔒 1-Year Locked Rate (₹3,348/yr)
-                        </div>
-                        <div class="token-tag">🔥 1/4th Token: <strong>₹697</strong></div>
+                        <ul class="plan-specs">
+                            <li><span class="bullet">✓</span> <strong>3 Domains</strong> Supported</li>
+                            <li><span class="bullet">✓</span> <strong>5 Subdomains</strong> Included</li>
+                            <li><span class="bullet">✓</span> <strong>40 GB NVMe SSD</strong> Fast Storage</li>
+                            <li><span class="bullet">✓</span> <strong>350 GB</strong> Monthly Bandwidth</li>
+                            <li><span class="bullet">✓</span> <strong>5 Email Addresses &amp; 5 MySQL DBs</strong></li>
+                            <li><span class="bullet">✓</span> Redis Object Cache Support</li>
+                            <li><span class="bullet">✓</span> Automated SEO Rich Snippets Generator</li>
+                            <li><span class="bullet">✓</span> Multi-target AI Scraper Workflow</li>
+                        </ul>
+                        <a href="https://forms.gle/AbrS1F7x4oZdqx4a9" target="_blank" class="btn-card-prebook">📝 Reserve Free Seat (₹0) ➔</a>
                     </div>
-                    <ul class="plan-specs">
-                        <li><span class="bullet">✓</span> <strong>1.00 vCPU</strong> Dedicated Processing Power</li>
-                        <li><span class="bullet">✓</span> <strong>2 GB</strong> High-Speed RAM</li>
-                        <li><span class="bullet">✓</span> <strong>25 GB NVMe</strong> Enterprise SSD</li>
-                        <li><span class="bullet">✓</span> Multi-Container Pod (App + MySQL/Postgres DB)</li>
-                        <li><span class="bullet">✓</span> Custom Domain Support + Traefik Auto SSL</li>
-                        <li><span class="bullet">✓</span> WebSocket, Celery &amp; Redis Support</li>
-                    </ul>
-                    <a href="https://forms.gle/AbrS1F7x4oZdqx4a9" target="_blank" class="btn-card-prebook">📝 Reserve Free Seat (₹0) ➔</a>
-                </div>
 
-                <!-- Plan 3: Pro Performance KVM VPS -->
-                <div class="cloud-card">
-                    <div class="cloud-pill" style="background: #10b981;">Pro KVM • 20% OFF</div>
-                    <div class="plan-title">Pro Performance KVM</div>
-                    <div class="plan-desc">Heavy traffic, ERPs, VPNs &amp; Windows</div>
-                    <div class="plan-price-box">
-                        <div style="display: flex; align-items: baseline; gap: 8px;">
-                            <span style="font-size: 18px; color: #94a3b8; text-decoration: line-through;">₹949</span>
-                            <span class="price-main">₹749</span>
-                            <span class="price-period">/ month</span>
+                    <!-- Plan 3: Shared Turbo -->
+                    <div class="cloud-card">
+                        <div class="cloud-pill" style="background: #ec4899;">Turbo E-Com • 20% OFF</div>
+                        <div class="plan-title">Shared WP Turbo</div>
+                        <div class="plan-desc">WooCommerce, high traffic &amp; agency client sites</div>
+                        <div class="plan-price-box">
+                            <div style="display: flex; align-items: baseline; gap: 8px;">
+                                <span style="font-size: 18px; color: #94a3b8; text-decoration: line-through;">₹238</span>
+                                <span class="price-main">₹190</span>
+                                <span class="price-period">/ month</span>
+                            </div>
+                            <div style="font-size: 11px; color: #34d399; font-weight: 700; margin-top: 4px;">
+                                🔒 1-Year Locked (₹2,280/yr) • Zero Renewal Hikes
+                            </div>
+                            <div class="token-tag">🔥 1/4th Token: <strong>₹570</strong></div>
                         </div>
-                        <div style="font-size: 11px; color: #34d399; font-weight: 700; margin-top: 4px;">
-                            🔒 1-Year Locked Rate (₹8,988/yr)
-                        </div>
-                        <div class="token-tag">🔥 1/4th Token: <strong>₹1,872</strong></div>
+                        <ul class="plan-specs">
+                            <li><span class="bullet">✓</span> <strong>10 Domains</strong> (or 1 WooCommerce Store)</li>
+                            <li><span class="bullet">✓</span> <strong>Unlimited Subdomains</strong></li>
+                            <li><span class="bullet">✓</span> <strong>80 GB NVMe SSD</strong> Enterprise Storage</li>
+                            <li><span class="bullet">✓</span> <strong>1,000 GB</strong> Monthly Bandwidth</li>
+                            <li><span class="bullet">✓</span> <strong>Unlimited Email &amp; MySQL Databases</strong></li>
+                            <li><span class="bullet">✓</span> Dedicated PHP Worker Pool &amp; Staging Tool</li>
+                            <li><span class="bullet">✓</span> High-Performance AI Scraper &amp; Data Pipeline</li>
+                        </ul>
+                        <a href="https://forms.gle/AbrS1F7x4oZdqx4a9" target="_blank" class="btn-card-prebook">📝 Reserve Free Seat (₹0) ➔</a>
                     </div>
-                    <ul class="plan-specs">
-                        <li><span class="bullet">✓</span> <strong>3.50 vCPU</strong> High-Frequency Cores</li>
-                        <li><span class="bullet">✓</span> <strong>8 GB</strong> DDR4 ECC RAM</li>
-                        <li><span class="bullet">✓</span> <strong>80 GB NVMe</strong> High IOPS SSD</li>
-                        <li><span class="bullet">✓</span> <strong>1x Dedicated Public Static IPv4 Included</strong></li>
-                        <li><span class="bullet">✓</span> Full Raw Root SSH, Custom Linux/Windows ISO</li>
-                        <li><span class="bullet">✓</span> noVNC In-Browser Console &amp; Priority Support</li>
-                    </ul>
-                    <a href="https://forms.gle/AbrS1F7x4oZdqx4a9" target="_blank" class="btn-card-prebook">📝 Reserve Free Seat (₹0) ➔</a>
                 </div>
             </div>
+
+            <!-- ========================================================================= -->
+            <!-- STAGE 2: APP CONTAINERS (3 PLANS) -->
+            <!-- ========================================================================= -->
+            <div id="stage-container" class="stage-content-panel">
+                <!-- Common Features Box for Stage 2 -->
+                <div class="common-features-box">
+                    <div class="common-box-header">
+                        <div class="common-box-title">
+                            💎 Included in ALL App Container Plans (Stage 2 Podman Engine)
+                        </div>
+                        <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                            <span class="tag-ai">🤖 Headless AI Scraping Runtime</span>
+                            <span class="tag-seo">⚡ Zero Loss Mount (:Z,U)</span>
+                        </div>
+                    </div>
+                    <div class="common-grid">
+                        <div class="common-item"><span class="check">✓</span> Rootless Podman Kube Architecture (`podman play kube`)</div>
+                        <div class="common-item"><span class="check">✓</span> 100% Zero-Loss NVMe Workspace Mount (`/app:Z,U`)</div>
+                        <div class="common-item"><span class="check">✓</span> Sub-second Live Deploys via `git pull` without image rebuilds</div>
+                        <div class="common-item"><span class="check">✓</span> <strong>Pre-installed Python/Node AI Scraping Environment (Playwright)</strong></div>
+                        <div class="common-item"><span class="check">✓</span> <strong>Automated Clean Markdown / JSON Extraction for LLMs</strong></div>
+                        <div class="common-item"><span class="check">✓</span> Automated Traefik Reverse Proxy with Wildcard SSL (*.txtmail.xyz)</div>
+                        <div class="common-item"><span class="check">✓</span> Native Custom CNAME Domain Verification &amp; Ingress</div>
+                        <div class="common-item"><span class="check">✓</span> Strict Cgroups v2 Resource Isolation (Zero Fork-Bomb Freeze)</div>
+                    </div>
+                </div>
+
+                <!-- 3 Container Cards Grid -->
+                <div class="cloud-grid" style="grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));">
+                    <!-- Plan 1 -->
+                    <div class="cloud-card">
+                        <div class="cloud-pill" style="background: #3b82f6;">20% OFF Launch</div>
+                        <div class="plan-title">App Micro Pod</div>
+                        <div class="plan-desc">For Python Flask, Node.js APIs &amp; microservices</div>
+                        <div class="plan-price-box">
+                            <div style="display: flex; align-items: baseline; gap: 8px;">
+                                <span style="font-size: 18px; color: #94a3b8; text-decoration: line-through;">₹189</span>
+                                <span class="price-main">₹149</span>
+                                <span class="price-period">/ month</span>
+                            </div>
+                            <div style="font-size: 11px; color: #34d399; font-weight: 700; margin-top: 4px;">
+                                🔒 1-Year Locked (₹1,788/yr)
+                            </div>
+                            <div class="token-tag">🔥 1/4th Token: <strong>₹372</strong></div>
+                        </div>
+                        <ul class="plan-specs">
+                            <li><span class="bullet">✓</span> <strong>0.50 vCPU</strong> Dedicated Compute Core</li>
+                            <li><span class="bullet">✓</span> <strong>1 GB</strong> High-Speed DDR4 RAM</li>
+                            <li><span class="bullet">✓</span> <strong>10 GB NVMe</strong> High IOPS SSD</li>
+                            <li><span class="bullet">✓</span> 1 App Container Pod</li>
+                            <li><span class="bullet">✓</span> Automated *.txtmail.xyz Subdomain</li>
+                            <li><span class="bullet">✓</span> SQLite / JSON Database Persistence</li>
+                            <li><span class="bullet">✓</span> Built-in BeautifulSoup &amp; Requests AI Scraper</li>
+                        </ul>
+                        <a href="https://forms.gle/AbrS1F7x4oZdqx4a9" target="_blank" class="btn-card-prebook">📝 Reserve Free Seat (₹0) ➔</a>
+                    </div>
+
+                    <!-- Plan 2 -->
+                    <div class="cloud-card featured">
+                        <div class="cloud-pill">Full-Stack • 20% OFF</div>
+                        <div class="plan-title">App Standard Pod</div>
+                        <div class="plan-desc">Full-stack web apps with dedicated database pod</div>
+                        <div class="plan-price-box">
+                            <div style="display: flex; align-items: baseline; gap: 8px;">
+                                <span style="font-size: 18px; color: #94a3b8; text-decoration: line-through;">₹262</span>
+                                <span class="price-main">₹210</span>
+                                <span class="price-period">/ month</span>
+                            </div>
+                            <div style="font-size: 11px; color: #34d399; font-weight: 700; margin-top: 4px;">
+                                🔒 1-Year Locked (₹2,520/yr)
+                            </div>
+                            <div class="token-tag">🔥 1/4th Token: <strong>₹525</strong></div>
+                        </div>
+                        <ul class="plan-specs">
+                            <li><span class="bullet">✓</span> <strong>1.00 vCPU</strong> Dedicated Processing Core</li>
+                            <li><span class="bullet">✓</span> <strong>2 GB</strong> High-Speed RAM</li>
+                            <li><span class="bullet">✓</span> <strong>20 GB NVMe</strong> Enterprise Storage</li>
+                            <li><span class="bullet">✓</span> Multi-Container Pod (App + MySQL/Postgres)</li>
+                            <li><span class="bullet">✓</span> Custom Domain Routing + Traefik Auto SSL</li>
+                            <li><span class="bullet">✓</span> WebSocket, Celery &amp; Redis Ready</li>
+                            <li><span class="bullet">✓</span> Headless Chromium AI Scraping Worker Included</li>
+                        </ul>
+                        <a href="https://forms.gle/AbrS1F7x4oZdqx4a9" target="_blank" class="btn-card-prebook">📝 Reserve Free Seat (₹0) ➔</a>
+                    </div>
+
+                    <!-- Plan 3 -->
+                    <div class="cloud-card">
+                        <div class="cloud-pill" style="background: #10b981;">Scale Pod • 20% OFF</div>
+                        <div class="plan-title">App Pro Scale</div>
+                        <div class="plan-desc">High-throughput backends, scrapers &amp; data pipelines</div>
+                        <div class="plan-price-box">
+                            <div style="display: flex; align-items: baseline; gap: 8px;">
+                                <span style="font-size: 18px; color: #94a3b8; text-decoration: line-through;">₹338</span>
+                                <span class="price-main">₹270</span>
+                                <span class="price-period">/ month</span>
+                            </div>
+                            <div style="font-size: 11px; color: #34d399; font-weight: 700; margin-top: 4px;">
+                                🔒 1-Year Locked (₹3,240/yr)
+                            </div>
+                            <div class="token-tag">🔥 1/4th Token: <strong>₹675</strong></div>
+                        </div>
+                        <ul class="plan-specs">
+                            <li><span class="bullet">✓</span> <strong>2.00 vCPU</strong> High-Compute Cores</li>
+                            <li><span class="bullet">✓</span> <strong>3 GB</strong> High-Speed RAM</li>
+                            <li><span class="bullet">✓</span> <strong>35 GB NVMe</strong> High IOPS SSD</li>
+                            <li><span class="bullet">✓</span> Multi-Service Stack (App + DB + Redis + Workers)</li>
+                            <li><span class="bullet">✓</span> Automated Zero-Downtime Rolling Restarts</li>
+                            <li><span class="bullet">✓</span> Multi-threaded AI Scraping &amp; Data Pipeline Pool</li>
+                            <li><span class="bullet">✓</span> Priority Discord Technical Engineering Support</li>
+                        </ul>
+                        <a href="https://forms.gle/AbrS1F7x4oZdqx4a9" target="_blank" class="btn-card-prebook">📝 Reserve Free Seat (₹0) ➔</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ========================================================================= -->
+            <!-- STAGE 3: DEDICATED KVM VPS (3 PLANS) -->
+            <!-- ========================================================================= -->
+            <div id="stage-vps" class="stage-content-panel">
+                <!-- Common Features Box for Stage 3 -->
+                <div class="common-features-box">
+                    <div class="common-box-header">
+                        <div class="common-box-title">
+                            💎 Included in ALL Dedicated VPS Plans (Stage 3 KVM Hypervisor)
+                        </div>
+                        <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                            <span class="tag-ai">⚡ Raw Root SSH &amp; Kernel</span>
+                            <span class="tag-seo">🛡️ Hardware-Isolated KVM</span>
+                        </div>
+                    </div>
+                    <div class="common-grid">
+                        <div class="common-item"><span class="check">✓</span> True Hardware Hypervisor Isolation (AMD-V / Intel VT-x)</div>
+                        <div class="common-item"><span class="check">✓</span> Dedicated Linux/Windows Kernel per tenant (Zero Noisy Neighbors)</div>
+                        <div class="common-item"><span class="check">✓</span> Full Raw Root SSH Access &amp; Custom Linux ISO Support</div>
+                        <div class="common-item"><span class="check">✓</span> Direct noVNC In-Browser Out-of-Band Console</div>
+                        <div class="common-item"><span class="check">✓</span> <strong>Docker-in-VM &amp; Custom Kernel Modules (WireGuard VPN)</strong></div>
+                        <div class="common-item"><span class="check">✓</span> <strong>Unrestricted High-Throughput Web Scraping &amp; Proxies</strong></div>
+                        <div class="common-item"><span class="check">✓</span> Enterprise NVMe Storage with Automated Snapshot Rollbacks</div>
+                        <div class="common-item"><span class="check">✓</span> Cloudflare DDoS Shield with Direct IP Whitelisting</div>
+                    </div>
+                </div>
+
+                <!-- 3 Dedicated VPS Cards Grid -->
+                <div class="cloud-grid" style="grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));">
+                    <!-- Plan 1 -->
+                    <div class="cloud-card">
+                        <div class="cloud-pill" style="background: #6366f1;">Entry KVM • 20% OFF</div>
+                        <div class="plan-title">Dedicated KVM Nano</div>
+                        <div class="plan-desc">For VPNs, private bots &amp; dedicated Linux sandbox</div>
+                        <div class="plan-price-box">
+                            <div style="display: flex; align-items: baseline; gap: 8px;">
+                                <span style="font-size: 18px; color: #94a3b8; text-decoration: line-through;">₹349</span>
+                                <span class="price-main">₹279</span>
+                                <span class="price-period">/ month</span>
+                            </div>
+                            <div style="font-size: 11px; color: #34d399; font-weight: 700; margin-top: 4px;">
+                                🔒 1-Year Locked (₹3,348/yr)
+                            </div>
+                            <div class="token-tag">🔥 1/4th Token: <strong>₹697</strong></div>
+                        </div>
+                        <ul class="plan-specs">
+                            <li><span class="bullet">✓</span> <strong>1.00 vCPU</strong> Dedicated Hardware Thread</li>
+                            <li><span class="bullet">✓</span> <strong>2 GB</strong> Dedicated ECC RAM</li>
+                            <li><span class="bullet">✓</span> <strong>25 GB NVMe</strong> High IOPS SSD</li>
+                            <li><span class="bullet">✓</span> Full KVM Hardware Isolation</li>
+                            <li><span class="bullet">✓</span> Raw Root SSH &amp; Custom Linux ISO</li>
+                            <li><span class="bullet">✓</span> In-Browser noVNC Out-of-Band Console</li>
+                            <li><span class="bullet">✓</span> Dedicated Scraping &amp; Proxy Automation Node</li>
+                        </ul>
+                        <a href="https://forms.gle/AbrS1F7x4oZdqx4a9" target="_blank" class="btn-card-prebook">📝 Reserve Free Seat (₹0) ➔</a>
+                    </div>
+
+                    <!-- Plan 2 -->
+                    <div class="cloud-card featured">
+                        <div class="cloud-pill">IP Included • 20% OFF</div>
+                        <div class="plan-title">Dedicated KVM Medium</div>
+                        <div class="plan-desc">Production workloads, WireGuard VPN &amp; Docker-in-VM</div>
+                        <div class="plan-price-box">
+                            <div style="display: flex; align-items: baseline; gap: 8px;">
+                                <span style="font-size: 18px; color: #94a3b8; text-decoration: line-through;">₹625</span>
+                                <span class="price-main">₹500</span>
+                                <span class="price-period">/ month</span>
+                            </div>
+                            <div style="font-size: 11px; color: #34d399; font-weight: 700; margin-top: 4px;">
+                                🔒 1-Year Locked (₹6,000/yr)
+                            </div>
+                            <div class="token-tag">🔥 1/4th Token: <strong>₹1,250</strong></div>
+                        </div>
+                        <ul class="plan-specs">
+                            <li><span class="bullet">✓</span> <strong>2.00 vCPU</strong> High-Performance Cores</li>
+                            <li><span class="bullet">✓</span> <strong>4 GB</strong> Dedicated ECC RAM</li>
+                            <li><span class="bullet">✓</span> <strong>50 GB NVMe</strong> Enterprise Storage</li>
+                            <li><span class="bullet">✓</span> <strong>1x Dedicated Public Static IPv4 Included</strong></li>
+                            <li><span class="bullet">✓</span> WireGuard VPN, OpenVPN &amp; Docker-in-VM Ready</li>
+                            <li><span class="bullet">✓</span> Automated Nightly Disk Snapshot Rollbacks</li>
+                            <li><span class="bullet">✓</span> Unrestricted Headless AI Scraping Engine</li>
+                        </ul>
+                        <a href="https://forms.gle/AbrS1F7x4oZdqx4a9" target="_blank" class="btn-card-prebook">📝 Reserve Free Seat (₹0) ➔</a>
+                    </div>
+
+                    <!-- Plan 3 -->
+                    <div class="cloud-card">
+                        <div class="cloud-pill" style="background: #10b981;">Pro Power • 20% OFF</div>
+                        <div class="plan-title">Dedicated KVM Pro</div>
+                        <div class="plan-desc">Heavy databases, Windows Server &amp; enterprise scale</div>
+                        <div class="plan-price-box">
+                            <div style="display: flex; align-items: baseline; gap: 8px;">
+                                <span style="font-size: 18px; color: #94a3b8; text-decoration: line-through;">₹949</span>
+                                <span class="price-main">₹749</span>
+                                <span class="price-period">/ month</span>
+                            </div>
+                            <div style="font-size: 11px; color: #34d399; font-weight: 700; margin-top: 4px;">
+                                🔒 1-Year Locked (₹8,988/yr)
+                            </div>
+                            <div class="token-tag">🔥 1/4th Token: <strong>₹1,872</strong></div>
+                        </div>
+                        <ul class="plan-specs">
+                            <li><span class="bullet">✓</span> <strong>3.50 vCPU</strong> Dedicated Hardware Cores</li>
+                            <li><span class="bullet">✓</span> <strong>8 GB</strong> Dedicated ECC RAM</li>
+                            <li><span class="bullet">✓</span> <strong>80 GB NVMe</strong> Enterprise High IOPS SSD</li>
+                            <li><span class="bullet">✓</span> <strong>1x Dedicated Public Static IPv4 Included</strong></li>
+                            <li><span class="bullet">✓</span> Windows Server &amp; Nested Virtualization Support</li>
+                            <li><span class="bullet">✓</span> Full High-Capacity AI Web Scraping Pool</li>
+                            <li><span class="bullet">✓</span> Priority VIP Discord Technical Escalation</li>
+                        </ul>
+                        <a href="https://forms.gle/AbrS1F7x4oZdqx4a9" target="_blank" class="btn-card-prebook">📝 Reserve Free Seat (₹0) ➔</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB SWITCHER JAVASCRIPT LOGIC -->
+            <script>
+                function switchStageTab(stageId, btnElement) {
+                    // Hide all panels
+                    const panels = document.querySelectorAll('.stage-content-panel');
+                    panels.forEach(p => p.classList.remove('active'));
+                    
+                    // Remove active from buttons
+                    const btns = document.querySelectorAll('.stage-tab-btn');
+                    btns.forEach(b => b.classList.remove('active'));
+                    
+                    // Activate selected
+                    const target = document.getElementById(stageId);
+                    if (target) target.classList.add('active');
+                    if (btnElement) btnElement.classList.add('active');
+                }
+            </script>
 
             <!-- Guarantee & Trust Strip -->
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; margin-bottom: 28px;">
@@ -1093,7 +1462,7 @@
                     <div style="font-size: 24px;">⚡</div>
                     <div>
                         <h4 style="font-size: 13px; font-weight: 800; color: #ffffff; margin-bottom: 2px;">1-Year Price Lock Protection</h4>
-                        <p style="font-size: 11px; color: #94a3b8; margin: 0;">Your ₹99/mo rate is locked for 1 full year. Zero renewal surprises.</p>
+                        <p style="font-size: 11px; color: #94a3b8; margin: 0;">Opening Ceremony rate locked for 1 full year. Zero renewal hikes.</p>
                     </div>
                 </div>
                 <div style="background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 12px; padding: 16px; display: flex; align-items: center; gap: 12px;">
@@ -1125,7 +1494,7 @@
             </div>
         </div>
 
-        id="apps">Mobile Applications &amp; Utilities</div>
+        <div class="section-title" id="apps">Mobile Applications &amp; Utilities</div>
 
         <!-- Kheror Khata Card -->
         <div class="app-card">
