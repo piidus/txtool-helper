@@ -1049,6 +1049,145 @@
 }
 
 
+
+/* ==========================================================================
+   MULTI-LANGUAGE SELECTOR & PEACOCK ACCENTS
+   ========================================================================== */
+.lang-selector-box {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    position: relative;
+    padding: 5px 12px 5px 10px;
+    border-radius: 20px;
+    background: #ffffff;
+    cursor: pointer;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    
+    /* Double-line peacock feather accent */
+    border: 2px solid transparent;
+    background-image: linear-gradient(#ffffff, #ffffff), linear-gradient(135deg, var(--peacock-blue), var(--peacock-green), var(--peacock-gold));
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    box-shadow: 0 2px 8px rgba(10, 75, 120, 0.08);
+}
+
+.lang-selector-box:hover,
+.lang-selector-box:focus-within {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 14px rgba(10, 75, 120, 0.18), 0 0 0 1px rgba(212, 175, 55, 0.35);
+}
+
+.lang-icon {
+    font-size: 15px;
+    line-height: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lang-select {
+    border: none;
+    background: transparent;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--slate);
+    cursor: pointer;
+    outline: none;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding: 0 16px 0 2px;
+    margin: 0;
+}
+
+.lang-chevron {
+    position: absolute;
+    right: 8px;
+    pointer-events: none;
+    color: var(--peacock-green);
+    transition: transform 0.2s ease;
+}
+
+.lang-selector-box:focus-within .lang-chevron {
+    transform: rotate(180deg);
+}
+
+/* Elegant Notification Toast when Translation is loading */
+.lang-toast {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    background: linear-gradient(135deg, #0A4B78, #0D7E5F);
+    color: #ffffff;
+    padding: 10px 18px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 8px 24px rgba(10, 75, 120, 0.25), 0 0 0 1px rgba(212, 175, 55, 0.4);
+    z-index: 99999;
+    opacity: 0;
+    transform: translateY(20px);
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.lang-toast.show {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.lang-spinner {
+    width: 14px;
+    height: 14px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-top-color: #D4AF37;
+    border-radius: 50%;
+    animation: langSpin 0.7s linear infinite;
+}
+
+@keyframes langSpin {
+    to { transform: rotate(360deg); }
+}
+
+/* ==========================================================================
+   CLEAN GOOGLE TRANSLATE STYLES (Hide intrusive banners & preserve clean UI)
+   ========================================================================== */
+.goog-te-banner-frame.skiptranslate,
+.goog-te-banner-frame {
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+}
+
+body {
+    top: 0px !important;
+    position: static !important;
+}
+
+#goog-gt-tt,
+.goog-te-balloon-frame {
+    display: none !important;
+}
+
+.goog-text-highlight {
+    background: none !important;
+    box-shadow: none !important;
+}
+
+#google_translate_element {
+    display: none !important;
+}
+
+.skiptranslate iframe {
+    display: none !important;
+}
+
     </style>
 </head>
 <body>
@@ -1071,6 +1210,26 @@
                 <a href="#apps" class="nav-link">📱 Mobile Apps</a>
                 <a href="privacy-policy.html" class="nav-link">Privacy Policy</a>
                 <a href="terms.html" class="nav-link">Terms</a>
+                                <!-- Language Switcher: 10 Major Indian Languages + English -->
+                <div class="lang-selector-box" id="langSelectorBox" onclick="prewarmTranslationEngine()" title="Select Language / ভাষা নির্বাচন করুন">
+                    <span class="lang-icon" aria-hidden="true">🌐</span>
+                    <select id="langSelect" class="lang-select" aria-label="Select Language" onchange="handleLanguageChange(this.value)">
+                        <option value="en">English (Default)</option>
+                        <option value="hi">🇮🇳 हिन्दी (Hindi)</option>
+                        <option value="bn">🇮🇳 বাংলা (Bengali)</option>
+                        <option value="te">🇮🇳 తెలుగు (Telugu)</option>
+                        <option value="mr">🇮🇳 मराठी (Marathi)</option>
+                        <option value="ta">🇮🇳 தமிழ் (Tamil)</option>
+                        <option value="gu">🇮🇳 ગુજરાતી (Gujarati)</option>
+                        <option value="kn">🇮🇳 ಕನ್ನಡ (Kannada)</option>
+                        <option value="ml">🇮🇳 മലയാളം (Malayalam)</option>
+                        <option value="pa">🇮🇳 ਪੰਜਾਬੀ (Punjabi)</option>
+                        <option value="or">🇮🇳 ଓଡ଼ିଆ (Odia)</option>
+                    </select>
+                    <svg class="lang-chevron" viewBox="0 0 24 24" width="12" height="12" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </div>
                 <a href="https://discord.gg/kBZGb3B9y" target="_blank" class="btn btn-outline" style="padding: 6px 14px; font-size: 13px; border-color: #5865F2; color: #5865F2;">
                     Discord Community
                 </a>
@@ -1818,5 +1977,136 @@
             }
         });
     </script>
+    <!-- Hidden Google Translate Mount & Feedback Toast -->
+    <div id="google_translate_element" style="display: none;" aria-hidden="true"></div>
+    <div id="langToast" class="lang-toast" aria-live="polite">
+        <div class="lang-spinner"></div>
+        <span id="langToastText">Translating website...</span>
+    </div>
+
+    <!-- On-Demand Lazy Translation Controller -->
+    <script>
+    (function() {
+        var STORAGE_KEY = 'txtool_pref_lang';
+        var isEngineLoaded = false;
+        var isEngineInitializing = false;
+        var langSelect = document.getElementById('langSelect');
+        var langToast = document.getElementById('langToast');
+        var langToastText = document.getElementById('langToastText');
+        var toastTimeout = null;
+
+        function showToast(msg, showSpinner, duration) {
+            if (!langToast) return;
+            langToastText.textContent = msg;
+            var spinner = langToast.querySelector('.lang-spinner');
+            if (spinner) spinner.style.display = showSpinner ? 'block' : 'none';
+            langToast.classList.add('show');
+            clearTimeout(toastTimeout);
+            if (duration) {
+                toastTimeout = setTimeout(function() {
+                    langToast.classList.remove('show');
+                }, duration);
+            }
+        }
+
+        // Pre-warm on click / hover ("on click load it")
+        window.prewarmTranslationEngine = function() {
+            if (isEngineLoaded || isEngineInitializing) return;
+            loadEngine(null);
+        };
+
+        function loadEngine(callback) {
+            if (isEngineLoaded) {
+                if (callback) callback();
+                return;
+            }
+            if (isEngineInitializing) {
+                var checkInterval = setInterval(function() {
+                    if (isEngineLoaded) {
+                        clearInterval(checkInterval);
+                        if (callback) callback();
+                    }
+                }, 100);
+                return;
+            }
+
+            isEngineInitializing = true;
+            window.googleTranslateElementInit = function() {
+                new google.translate.TranslateElement({
+                    pageLanguage: 'en',
+                    includedLanguages: 'en,hi,bn,te,mr,ta,gu,kn,ml,pa,or',
+                    autoDisplay: false
+                }, 'google_translate_element');
+                isEngineLoaded = true;
+                isEngineInitializing = false;
+                if (callback) callback();
+            };
+
+            var s = document.createElement('script');
+            s.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+            s.async = true;
+            s.onerror = function() {
+                isEngineInitializing = false;
+                showToast('Unable to load translation service.', false, 3000);
+            };
+            document.body.appendChild(s);
+        }
+
+        // On-Change Handler ("onchange load indian major language")
+        window.handleLanguageChange = function(targetLang) {
+            if (!targetLang) return;
+
+            if (targetLang === 'en') {
+                localStorage.removeItem(STORAGE_KEY);
+                var domain = window.location.hostname;
+                document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+                document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; domain=' + domain + '; path=/;';
+                document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; domain=.' + domain + '; path=/;';
+                showToast('Restoring English...', true, 800);
+                setTimeout(function() {
+                    location.reload();
+                }, 300);
+                return;
+            }
+
+            localStorage.setItem(STORAGE_KEY, targetLang);
+            var langName = langSelect ? langSelect.options[langSelect.selectedIndex].text.split('(')[0].replace('🇮🇳', '').trim() : targetLang;
+            showToast('Translating into ' + langName + '...', true, 0);
+
+            var domain = window.location.hostname;
+            document.cookie = 'googtrans=/en/' + targetLang + '; path=/;';
+            if (domain && domain !== 'localhost') {
+                document.cookie = 'googtrans=/en/' + targetLang + '; domain=.' + domain + '; path=/;';
+            }
+
+            loadEngine(function() {
+                var attempts = 0;
+                var applyInterval = setInterval(function() {
+                    attempts++;
+                    var combo = document.querySelector('.goog-te-combo');
+                    if (combo) {
+                        combo.value = targetLang;
+                        combo.dispatchEvent(new Event('change'));
+                        clearInterval(applyInterval);
+                        showToast('Website translated to ' + langName, false, 2500);
+                    } else if (attempts > 35) {
+                        clearInterval(applyInterval);
+                        location.reload();
+                    }
+                }, 100);
+            });
+        };
+
+        // Auto-restore saved language on load
+        document.addEventListener('DOMContentLoaded', function() {
+            var savedLang = localStorage.getItem(STORAGE_KEY);
+            if (savedLang && savedLang !== 'en' && langSelect) {
+                langSelect.value = savedLang;
+                handleLanguageChange(savedLang);
+            }
+        });
+    })();
+    </script>
+
 </body>
 </html>
